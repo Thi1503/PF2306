@@ -5,15 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="mouse.css">
 </head>
 
 <body>
     <p>Kiểm tra</p>
     <input type="number" id="inputNumber">
-    <button type="button" onclick="checkNumber(x)">Kiểm tra</button>
+
+    <button id="button" type="button" onclick="checkNumber()">Kiểm tra</button>
+
     <script>
-        let x = document.getElementById("inputNumber");
-        function checkNumber(x) {
+
+        function checkNumber() {
+            let x = document.getElementById("inputNumber");
             if (x.value % 2 == 0) {
                 alert(x.value + " là số chẵn");
             }
@@ -21,7 +25,6 @@
                 alert(x.value + " không là số chẵn");
             }
         }
-
     </script>
 </body>
 
