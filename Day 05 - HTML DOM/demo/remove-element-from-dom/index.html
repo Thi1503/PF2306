@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class=" container" id="content">
+        <p id="first-para">This is first paragraph</p>
+        <p id="second-para">This is second paragraph</p>
+        <p>This content will not be remove!</p>
+    </div>
+    <script>
+        let contenDIv = document.getElementById("content");
+        let firstPara = document.getElementById("first-para");
+        let secondPara = document.getElementById("second-para");
+        //method 01
+        // fristPara.remove();
+        //method 02
+        //contenDIv.removeChild(secondPara);
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add elemrnt to DOM</title>
+</head>
+
+<body>
+    <div class="container" id="content">
+        <p id="first-para">This is first paragraph</p>
+        <p id="second-para">This is second paragraph</p>
+    </div>
+    <script>
+        // get content container
+        let contenDIv = document.getElementById("content");
+        let firstPara = document.getElementById("first-para");
+        //method 01
+        //create a new div add 
+        const introParagraph = document.createElement("p");
+        introParagraph.innerText = "This is paragraph";
+        contenDIv.appendChild(introParagraph);
+        contenDIv.insertBefore(introParagraph, firstPara)
+
+
+    </script>
+</body>
+
+</html>
