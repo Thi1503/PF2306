@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mouse.css">
+</head>
+
+<body>
+        <table>
+            <tr>
+                <td><b>Caculator</b></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="number" id="numberOne"></td>
+                <td colspan="2"><input type="number" id="numberTwo"></td>
+            </tr>
+            <tr>
+                <td><button id="addition" type="button" onclick="additionNumbers()"><b>Addition(+)</b></button></td>
+                <td><button id="subtraction" type="button" onclick="subtractionNumbers()"><b>Subtraction(-)</b></button></td>
+                <td><button id="multiplication" type="button" onclick="multiplicationNumbers()"><b>Multiplication(x)</b></button></td>
+                <td><button id="division" type="button" onclick="divisionNumbers()"><b>Division(/)</b></button></td>
+            </tr>
+            <tr>
+                <td id="result" colspan="4"></td>
+            </tr>
+        </table>
+    <script>
+        let number1 = document.getElementById("numberOne");
+        let number2 = document.getElementById("numberTwo");
+        let result = document.getElementById("result");
+        // hàm tính phép cộng
+        function additionNumbers() {
+            let result_add = parseFloat(number1.value) + parseFloat(number2.value);
+            result.innerText = "Result Addition: "+ result_add;
+        
+        }
+        // hàm tính phép trừ
+        function subtractionNumbers() {
+            let result_sub = parseFloat(number1.value) - parseFloat(number2.value);
+            result.innerText = "Result Subtraction: "+ result_sub;
+        }
+        // hàm tính phép nhân
+        function multiplicationNumbers() {
+            let result_mul = parseFloat(number1.value) * parseFloat(number2.value);
+            result.innerText = "Result Multiplication: "+ result_mul;
+        }
+        // hàm tính phép chia
+        function divisionNumbers() {
+            let result_div = parseFloat(number1.value) / parseFloat(number2.value);
+            result.innerText = "Result Division: "+ result_div;
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="mouse.css">
+</head>
+
+<body>
+    <p><b>Nhập năm</b></p>
+    <input type="number" name="number" id="inputNumber">
+
+    <button id="btn" type="button" onclick="checkNumber()"><b>Kiểm tra</b></button>
+
+    <script>
+        function checkNumber() {
+            let x = document.getElementById("inputNumber");
+            if (x.value % 4 == 0 && x.value % 100 != 0) {
+                alert(x.value + " là năm nhuận");
+            }
+            else if (x.value % 100 == 0 && x.value % 400 != 0) {
+                alert(x.value + " không là năm nhuận");
+            }
+            else if (x.value % 400 == 0) {
+                alert(x.value + " là năm nhuận");
+            }
+            else {
+                alert(x.value + " không là năm nhuận");
+            }
+        }
+    </script>
+</body>
+
+</html>
