@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Look up the price of fruit</title>
+</head>
+
+<body>
+    <h1><b>Giá hoa quả</b></h1>
+    <input type="text" name="name" id="inputFruit" onchange="inputNameFruit(this)">
+    <button type="button" id="btnCheck" onclick="checkNumberFruit()">Xem giá</button>
+    <p id="result"><b></b></p>
+    <script>
+        let numberFruit;
+        function inputNameFruit(obj) {
+            numberFruit = obj.value;
+        }
+        function checkNumberFruit() {
+            switch (numberFruit) {
+                case 'Ổi':
+                    result.innerText = "20000 VNĐ/kg";
+                    break;
+                case 'Dưa Hấu':
+                    result.innerText = "20000 VNĐ/kg";
+                    break;
+                case 'Táo':
+                    result.innerText = "30000 VNĐ/kg";
+                    break;
+                case 'Xoài':
+                    result.innerText = "30000 VNĐ/kg";
+                    break;
+                case 'Cam':
+                    result.innerText = "40000 VNĐ/kg";
+                    break;
+                case 'Chôm Chôm':
+                    result.innerText = "40000 VNĐ/kg";
+                    break;
+                case 'Măng Cụt':
+                    result.innerText = "50000 VNĐ/kg";
+                    break;
+            }
+        }
+    </script>
+</body>
+
+</html>
