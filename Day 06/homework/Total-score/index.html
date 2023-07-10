@@ -31,7 +31,8 @@
         <tr>
             <td>Khu vực</td>
             <td>
-                <select name="choice" id="choice" onchange="inputArea(this)">
+                <select id="choice" onchange="inputArea(this)">
+                    <option type="text" value="">Chọn khu vực</option>
                     <option type="text" value="KV1">KV1</option>
                     <option type="text" value="KV2">KV2</option>
                     <option type="text" value="KV2-NT">KV2-NT</option>
@@ -48,8 +49,8 @@
     <p id="output" style="color: red;"></p>
 
     <script>
-        var mathScores, literatureScores, englishScores, plusMark, total;
-        var area
+        let mathScores, literatureScores, englishScores, plusMark, total;
+        let area
         function inputMath(obj) {
             mathScores = parseFloat(obj.value);
         }

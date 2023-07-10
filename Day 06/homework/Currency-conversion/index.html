@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi tiền tệ</title>
+    <link rel="stylesheet" href="acess/bootstrap-5.2.3-dist/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <table class="table table-borderless">
+        <tr>
+            <th scope="col"><b>Amount</b></th>
+            <th scope="col"><b>From Currency</b></th>
+            <th scope="col"><b>To Currency</b></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="money" onchange="getCurrency(this)"></td>
+            <td>
+                <select name="chose1"  onchange="getFromCurrency(this)">
+                    <option type="text" value="">Select currency</option>
+                    <option type="text" value="USD">USD</option>
+                    <option type="text" value="VietNam">VietNam</option>
+            
+                </select>
+            </td>
+            <td>
+                <select name="chose2"  onchange="getToCurrency(this)">
+                    <option type="text" value="">Select currency</option>
+                    <option type="text" value="USD">USD</option>
+                    <option type="text" value="VietNam">VietNam</option>
+                </select>
+            </td>
+            <td>
+                <button type="button" id="convert" onclick="currencyConversion()">Convert</button>
+            </td>
+            <tr>
+                <td><p id="output" style="color: blue;"></p></td>
+            </tr>
+        </tr>
+    </table>
+    <script>
+        let money, fromCurrency, toCurrency, result;
+
+        function getCurrency(obj) {
+            money = obj.value;
+            console.log(money)
+        }
+
+        function getFromCurrency(obj) {
+            fromCurrency = obj.value;
+            console.log(fromCurrency)
+        }
+
+        function getToCurrency(obj) {
+            toCurrency = obj.value;
+            console.log(toCurrency)
+        }
+
+        function currencyConversion() {
+            if (fromCurrency == "VietNam") {
+                if (toCurrency == "VietNam") {
+                    result = money;
+                    output.innerText = "Result: " + result + " VND";
+                } else{
+                    result = money / 23000;
+                    output.innerText = "Result: " + result + " USD";
+                }
+            } else{
+                if (toCurrency == "USD") {
+                    result = money;
+                    output.innerText = "Result: " + result + " USD";
+                }else {
+                    result = money * 23000;
+                    output.innerText = "Result: " + result + " VND";
+                }
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
