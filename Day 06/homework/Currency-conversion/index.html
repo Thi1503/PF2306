@@ -19,26 +19,28 @@
         <tr>
             <td><input type="number" id="money" onchange="getCurrency(this)"></td>
             <td>
-                <select name="chose1"  onchange="getFromCurrency(this)">
+                <select name="chose1" onchange="getFromCurrency(this)">
                     <option type="text" value="">Select currency</option>
                     <option type="text" value="USD">USD</option>
                     <option type="text" value="VietNam">VietNam</option>
-            
+
                 </select>
             </td>
             <td>
-                <select name="chose2"  onchange="getToCurrency(this)">
+                <select name="chose2" onchange="getToCurrency(this)">
                     <option type="text" value="">Select currency</option>
                     <option type="text" value="USD">USD</option>
                     <option type="text" value="VietNam">VietNam</option>
                 </select>
             </td>
             <td>
-                <button type="button" id="convert" onclick="currencyConversion()">Convert</button>
+                <button type="button" id="convert" onclick="currencyConversion()" >Convert</button>
             </td>
-            <tr>
-                <td><p id="output" style="color: blue;"></p></td>
-            </tr>
+        <tr>
+            <td>
+                <p id="output" style="color: blue;"></p>
+            </td>
+        </tr>
         </tr>
     </table>
     <script>
@@ -46,17 +48,14 @@
 
         function getCurrency(obj) {
             money = obj.value;
-            console.log(money)
         }
 
         function getFromCurrency(obj) {
             fromCurrency = obj.value;
-            console.log(fromCurrency)
         }
 
         function getToCurrency(obj) {
             toCurrency = obj.value;
-            console.log(toCurrency)
         }
 
         function currencyConversion() {
@@ -64,15 +63,15 @@
                 if (toCurrency == "VietNam") {
                     result = money;
                     output.innerText = "Result: " + result + " VND";
-                } else{
+                } else {
                     result = money / 23000;
                     output.innerText = "Result: " + result + " USD";
                 }
-            } else{
+            } else {
                 if (toCurrency == "USD") {
                     result = money;
                     output.innerText = "Result: " + result + " USD";
-                }else {
+                } else {
                     result = money * 23000;
                     output.innerText = "Result: " + result + " VND";
                 }
