@@ -52,21 +52,16 @@
         var area
         function inputMath(obj) {
             mathScores = parseFloat(obj.value);
-            console.log(mathScores)
         }
         function inputLiterature(obj) {
             literatureScores = parseFloat(obj.value);
-            console.log(literatureScores)
         }
         function inputEnglish(obj) {
             englishScores = parseFloat(obj.value);
-            console.log(englishScores)
         }
         function inputArea(obj) {
             area = obj.value;
-            console.log(typeof (area))
         }
-
         function totalScore() {
             switch (area) {
                 case 'KV1':
@@ -82,9 +77,7 @@
                     plusMark = 0;
                     break;
             }
-            console.log(plusMark);
             total = mathScores + literatureScores + englishScores + plusMark;
-            console.log(total);
             output.innerText = "Tổng điểm ĐH khối D của bạn là: " + total;
         }
 

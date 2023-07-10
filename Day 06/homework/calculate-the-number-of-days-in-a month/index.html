@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate the number of days in a month</title>
+</head>
+
+<body>
+    <input type="number" name="name" id="month" onchange="inputMonth(this)">
+    <button type="button" id="btncheck" onclick="checkMonth()">Tính số ngày</button>
+    <p id="output"><b></b></p>
+    <script>
+        let daysInAMonth;
+        function inputMonth(obj) {
+            daysInAMonth = Number(obj.value);
+            console.log(daysInAMonth);
+        }
+        function checkMonth() {
+            switch (daysInAMonth) {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    output.innerText = "Tháng " + daysInAMonth + " có 31 ngày";
+                    break;
+                case 2:
+                    output.innerText = "Tháng " + daysInAMonth + " ó 28 hoặc 29 ngày";
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    output.innerText = "Tháng " + daysInAMonth + " có 30 ngày";
+                    break;
+                default:
+                    output.innerText = "Tháng nhập vào phải có giá trị từ 1 đến 12"
+            }
+        }
+    </script>
+</body>
+
+</html>
