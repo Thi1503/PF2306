@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính điểm Đại học khối D</title>
+</head>
+
+<body>
+    <h1><b>Tính điểm Đại học khối D</b></h1>
+    <table>
+        <tr>
+            <td>
+                <p>Môn toán</p>
+            </td>
+            <td><input type="number" id="math" style="width: 70px;" onchange="inputMath(this)"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Môn Văn</p>
+            </td>
+            <td><input type="number" id="literature" style="width: 70px;" onchange="inputLiterature(this)"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Môn Anh</p>
+            </td>
+            <td><input type="number" id="english" style="width: 70px;" onchange="inputEnglish(this)"></td>
+        </tr>
+        <tr>
+            <td>Khu vực</td>
+            <td>
+                <select name="choice" id="choice" onchange="inputArea(this)">
+                    <option type="text" value="KV1">KV1</option>
+                    <option type="text" value="KV2">KV2</option>
+                    <option type="text" value="KV2-NT">KV2-NT</option>
+                    <option type="text" value="KV3">KV3</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" id="btnTotalScore" onclick="totalScore()">Tính điểm</button>
+            </td>
+        </tr>
+    </table>
+    <p id="output" style="color: red;"></p>
+
+    <script>
+        var mathScores, literatureScores, englishScores, plusMark, total;
+        var area
+        function inputMath(obj) {
+            mathScores = parseFloat(obj.value);
+            console.log(mathScores)
+        }
+        function inputLiterature(obj) {
+            literatureScores = parseFloat(obj.value);
+            console.log(literatureScores)
+        }
+        function inputEnglish(obj) {
+            englishScores = parseFloat(obj.value);
+            console.log(englishScores)
+        }
+        function inputArea(obj) {
+            area = obj.value;
+            console.log(typeof (area))
+        }
+
+        function totalScore() {
+            switch (area) {
+                case 'KV1':
+                    plusMark = 0.75;
+                    break;
+                case 'KV2':
+                    plusMark = 0.25;
+                    break;
+                case 'KV2-NT':
+                    plusMark = 0.5;
+                    break;
+                case 'KV3':
+                    plusMark = 0;
+                    break;
+            }
+            console.log(plusMark);
+            total = mathScores + literatureScores + englishScores + plusMark;
+            console.log(total);
+            output.innerText = "Tổng điểm ĐH khối D của bạn là: " + total;
+        }
+
+    </script>
+</body>
+
+</html>
