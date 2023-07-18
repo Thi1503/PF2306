@@ -10,10 +10,10 @@
 <body>
     <script>
         let solarYear = parseInt(prompt("Nhập vào năm lịch dương:"));
-        let checkCan = solarYear % 10;
-        let checkChi = solarYear % 12;
+        let surplusCan = solarYear % 10;
+        let surplusChi = solarYear % 12;
         let Can, Chi, lunarYear;
-        switch (checkCan) {
+        switch (surplusCan) {
             case 0: Can = 'Canh'; break;
             case 1: Can = 'Tân'; break;
             case 2: Can = 'Nhâm'; break;
@@ -23,9 +23,9 @@
             case 6: Can = 'Bính'; break;
             case 7: Can = 'Đinh'; break;
             case 8: Can = 'Mậu'; break;
-            case 9: Can = 'Kỷ'; break;
+            default: Can = 'Kỷ';
         }
-        switch (checkChi) {
+        switch (surplusChi) {
             case 0: Chi = 'Thân'; break;
             case 1: Chi = 'Dậu'; break;
             case 2: Chi = 'Tuất'; break;
@@ -37,7 +37,7 @@
             case 8: Chi = 'Thìn'; break;
             case 9: Chi = 'Tỵ'; break;
             case 10: Chi = 'Ngọ'; break;
-            case 11: Chi = 'Mùi'; break;
+            default: Chi = 'Mùi';
         }
         lunarYear = Can + " " + Chi;
         alert("Năm âm lịch tương ứng với năm dương lịch " + solarYear + " là năm " + lunarYear);

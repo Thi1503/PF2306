@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số đảo ngược</title>
+</head>
+
+<body>
+    <input type="number" name="inputNumber" onchange="getInputNumber(this)">
+    <button type="button" onclick="reverseNumber()">OK</button>
+    <p id="result"></p>
+    <script>
+        let inputNumber, outputNumber;
+        let result = document.getElementById("result");
+        let i = 1;
+        function getInputNumber(obj) {
+            inputNumber = Number(obj.value);
+        }
+        function reverseNumber() {
+            outputNumber = 0;
+            while (inputNumber != 0) {
+                outputNumber = outputNumber * 10 + (inputNumber % 10);
+                inputNumber = (inputNumber - inputNumber % 10) / 10;
+            }
+            result.innerText ="Số đảo ngược là: " + outputNumber;
+        }
+    </script>
+</body>
+
+</html>

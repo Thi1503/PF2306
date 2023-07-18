@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 7</title>
+</head>
+
+<body>
+    Tọa độ điểm x: <input type="number" name="numberX" onchange="getX(this)">
+    <br>
+    Tọa độ điểm y: <input type="number" name="numberY" onchange="getY(this)">
+    <br>
+    <button type="button" onclick="checkEven()">Kiểm tra</button>
+    <br>
+    <p id="display"></p>
+    <script>
+        let numberX, numberY;
+        let distance_1;// khoảng cách từ điểm xét đến cạnh điểm (0,100);
+        let distance_2;// khoảng cách từ điểm xét đến cạnh (0,100) (200,0);
+        let distance_3;// khoảng cách từ điểm xét đến điểm (200,0);
+        let display = document.getElementById("display");
+        function getX(obj) {
+            numberX = Number(obj.value);
+        }
+        function getY(obj) {
+            numberY = Number(obj.value);
+        }
+        function checkEven(){
+            distance_1 = Math.sqrt((numberX-0)**2+(numberY-100)**2);
+            distance_2 = Math.abs(1/2*numberX+1*numberY-100)/Math.sqrt((1/2)**2+1**2);
+            distance_3 = Math.sqrt((numberX-200)**2+(numberY-0)**2);
+            if ((0<= distance_1 <=100 )&&(0<=distance_2<=Math.sqrt((100**2 * 200**2)/(100**2 + 200**2))&&(0<=distance_3<=200))){
+                display.innerText = `Điểm (${numberX};${numberY}) thuộc vào tam giác có tọa độ 3 cạnh (0;0), (0;100), (200;0)`
+            }
+            else{
+                display.innerText = `Điểm (${numberX};${numberY}) không thuộc vào tam giác có tọa độ 3 cạnh (0;0), (0;100), (200;0)`
+            }
+        }
+    </script>
+</body>
+
+</html>

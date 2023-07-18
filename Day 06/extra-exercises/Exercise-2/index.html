@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 </title>
+</head>
+
+<body>
+    <input type="text" onchange="getNumber(this)" placeholder="Nhập vào số có 9 chữ số">
+    <button type="button" onclick="checkISBN()">Kiểm tra</button>
+    <p id="display"></p>
+    <script>
+        let numberToCheck, number_S, temp, n1, n2, n3, n4, n5, n6, n7, n8, n9, result;
+        let display = document.getElementById("display");
+        console.log(temp);
+        function getNumber(obj) {
+            numberToCheck = parseInt(obj.value);
+            number_S = obj.value;
+        }
+        function checkISBN() {
+            n9 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n9) / 10;
+            n8 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n8) / 10;
+            n7 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n7) / 10;
+            n6 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n6) / 10;
+            n5 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n5) / 10;
+            n4 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n4) / 10;
+            n3 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n3) / 10;
+            n2 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n2) / 10;
+            n1 = numberToCheck % 10;
+            numberToCheck = (numberToCheck - n1) / 10;
+            result = (n1 * 1 + n2 * 2 + n3 * 3 + n4 * 4 + n5 * 5 + n6 * 6 + n7 * 7 + n8 * 8 + n9 * 9) % 11;
+            if (result == 10) {
+                result = 'X';
+            }
+            display.innerText = `Số ISBN-10 là: ${number_S}${result}`;
+        }
+    </script>
+</body>
+
+</html>

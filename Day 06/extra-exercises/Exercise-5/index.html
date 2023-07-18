@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5</title>
+</head>
+
+<body>
+    Tọa độ điểm x: <input type="number" name="numberX" onchange="getX(this)">
+    <br>
+    Tọa độ điểm y: <input type="number" name="numberY" onchange="getY(this)">
+    <br>
+    <button type="button" onclick="checkEven()">Kiểm tra</button>
+    <br>
+    <p id="display"></p>
+    <script>
+        let numberX, numberY;
+        let display = document.getElementById("display");
+        function getX(obj) {
+            numberX = Number(obj.value);
+        }
+        function getY(obj) {
+            numberY = Number(obj.value);
+        }
+        function checkEven() {
+            if (numberX <= 5 && numberY <= 2.5) {
+                display.innerText = `Điểm (${numberX};${numberY}) thuộc hình chữ nhật tâm O(0;0) chiều rộng 10 và chiều dài 5`
+            }
+            else {
+                display.innerText = `Điểm (${numberX};${numberY}) không thuộc hình chữ nhật tâm O(0;0) chiều rộng 10 và chiều dài 5`
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+</head>
+
+<body>
+    <h1>Tính ngày trong tuần</h1>
+    <table>
+        <tr>
+            <td>
+                <p>Enter year:</p>
+            </td>
+            <td><input type="number" name="year" onchange="getYear(this)"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Enter month:</p>
+            </td>
+            <td><input type="number" name="month" onchange="getMonth(this)"></td>
+        </tr>
+        <tr>
+            <td>
+                <p>Enter year:</p>
+            </td>
+            <td><input type="number" name="day" onchange="getDay(this)"></td>
+        </tr>
+        <tr>
+            <td><button type="button" onclick="checkDate()">kiểm tra</button></td>
+        </tr>
+    </table>
+    <p id="display"></p>
+    <script>
+        let year, month, day, result, temp;
+        let display = document.getElementById("display");
+        function getYear(obj) {
+            year = parseInt(obj.value);
+        }
+        console.log(year);
+        function getMonth(obj) {
+            month = parseInt(obj.value);
+        }
+        function getDay(obj) {
+            day = parseInt(obj.value);
+        }
+        function checkDate() {
+            result = (day + Math.floor(26 * (month + 1) / 10) + year % 100 + Math.floor(year % 100 / 4) + Math.floor(year / 100 / 4) + 5 * Math.floor(year / 100)) % 7;
+            switch (result) {
+                case 0: temp = 'Saturday'; break;
+                case 1: temp = 'Sunday'; break;
+                case 2: temp = 'Monday'; break;
+                case 3: temp = 'Tuesday'; break;
+                case 4: temp = 'Wednesday'; break;
+                case 5: temp = 'Thursday'; break;
+                case 6: temp = 'Friday'; break;
+                default: temp = 'Lỗi tính toán';
+            }
+            console.log(result);
+            display.innerText = `Day of the week is ${temp}`
+        }
+    </script>
+</body>
+
+</html>

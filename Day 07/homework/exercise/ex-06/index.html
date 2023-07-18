@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính tổng các số trong khoảng</title>
+</head>
+<body>
+    <script>
+        let a = Number(prompt("Số a trong đoạn [a;b] là: "));
+        let b = Number(prompt("Số b trong đoạn [a;b] là: "));
+        let sum = 0;
+        for(let i = a;i<=b;i++){
+            sum+=i;
+        }
+        alert(`Tổng các số trong khoảng [${a};${b}] là ${sum}`);
+    </script>
+</body>
+</html>

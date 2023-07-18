@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 4</title>
+</head>
+
+<body>
+    Tọa độ điểm x: <input type="number" name="numberX" onchange="getX(this)">
+    <br>
+    Tọa độ điểm y: <input type="number" name="numberY" onchange="getY(this)">
+    <br>
+    <button type="button" onclick="checkEven()">Kiểm tra</button>
+    <br>
+    <p id="display"></p>
+    <script>
+        let numberX, numberY, check;
+        let display = document.getElementById("display");
+        function getX(obj) {
+            numberX = Number(obj.value);
+        }
+        function getY(obj) {
+            numberY = Number(obj.value);
+        }
+        function checkEven() {
+            check = Math.sqrt(numberX * numberX + numberY * numberY);
+            console.log(check);
+            if (check <= 10) {
+                display.innerText = `Điểm (${numberX};${numberY}) thuộc đường tròn tâm O(0;0) bán kính 10`
+            }
+            else {
+                display.innerText = `Điểm (${numberX};${numberY}) không thuộc đường tròn tâm O(0;0) bán kính 10`
+            }
+        }
+    </script>
+
+</body>
+
+</html>

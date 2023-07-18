@@ -9,16 +9,17 @@
 
 <body>
     <h1><b>Giá hoa quả</b></h1>
-    <input type="text" name="name" id="inputFruit" onchange="inputNameFruit(this)">
+    <input type="text" name="inputFruit" id="inputFruit" onchange="inputNameFruit(this)" placeholder="Nhập tên trái cây">
     <button type="button" id="btnCheck" onclick="checkNumberFruit()">Xem giá</button>
     <p id="result"><b></b></p>
     <script>
-        let numberFruit;
+        let nameFruit;
+        let result = document.getElementById("result");
         function inputNameFruit(obj) {
-            numberFruit = obj.value;
+            nameFruit = obj.value;
         }
         function checkNumberFruit() {
-            switch (numberFruit) {
+            switch (nameFruit) {
                 case 'Ổi':
                     result.innerText = "20000 VNĐ/kg";
                     break;
@@ -40,6 +41,8 @@
                 case 'Măng Cụt':
                     result.innerText = "50000 VNĐ/kg";
                     break;
+                default:
+                    result.innerText = "Sản phẩm hiện chưa có tại cửa hàng hoặc bạn đã nhập sai tên"
             }
         }
     </script>

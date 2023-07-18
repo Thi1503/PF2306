@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="2"><p><b>Hình chữ nhật 1</b></p></td>
+            <td colspan="2"><p><b>Hình chữ nhật 2</b></p></td>
+        </tr>
+        <tr>
+            <td><p>Tọa độ x1:</p></td>
+            <td><input type="number" name="numberX-1" onchange="getX1(this)" placeholder="hoành độ tâm"></td>
+            <td><p>Tọa độ x2:</p></td>
+            <td><input type="number" name="numberX-2" onchange="getX2(this)" placeholder="hoành độ tâm"></td>
+        </tr>
+        <tr>
+            <td><p>Tọa độ y1:</p></td>
+            <td><input type="number" name="numberY-1" onchange="getY1(this)" placeholder="tung độ tâm"></td>
+            <td><p>Tọa độ y2:</p></td>
+            <td><input type="number" name="numberY-2" onchange="getY2(this)" placeholder="tung độ tâm"></td>
+        </tr>
+        <tr>
+            <td><p>Chiều dài 1:</p></td>
+            <td><input type="number" name="hight-1" onchange="getH1(this)" placeholder="chiều dài"></td>
+            <td><p>Chiều dài 2:</p></td>
+            <td><input type="number" name="hight-2" onchange="getH2(this)" placeholder="chiều dài"></td>
+        </tr>
+        <tr>
+            <td><p>Chiều rộng 1:</p></td>
+            <td><input type="number" name="width-1" onchange="getW1(this)" placeholder="chiều rộng"></td>
+            <td><p>Chiều dài 2:</p></td>
+            <td><input type="number" name="widht-2" onchange="getW2(this)" placeholder="chiều rộng"></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="checkEven()">Kiểm tra</button>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

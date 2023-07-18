@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1</title>
+</head>
+
+<body>
+    <button type="button" onclick="randomMonths()">Random month</button>
+    <p id="result"></p>
+    <script>
+        function randomMonths() {
+            let month = Math.floor(Math.random() * 13);
+            let result = document.getElementById("result");
+            let display;
+            switch (month) {
+                case 1: display = 'January'; break;
+                case 2: display = 'February'; break;
+                case 3: display = 'March'; break;
+                case 4: display = 'April'; break;
+                case 5: display = 'May'; break;
+                case 6: display = 'June'; break;
+                case 7: display = 'July'; break;
+                case 8: display = 'August'; break;
+                case 9: display = 'September'; break;
+                case 10: display = 'October'; break;
+                case 11: display = 'November'; break;
+                default: display = 'December';
+            }
+            result.innerText = display;
+        }
+    </script>
+</body>
+
+</html>

@@ -34,7 +34,7 @@
                 </select>
             </td>
             <td>
-                <button type="button" id="convert" onclick="currencyConversion()" >Convert</button>
+                <button type="button" id="convert" onclick="currencyConversion()">Convert</button>
             </td>
         <tr>
             <td>
@@ -63,15 +63,18 @@
                 if (toCurrency == "VietNam") {
                     result = money;
                     output.innerText = "Result: " + result + " VND";
-                } else {
+                }
+                else {
                     result = money / 23000;
                     output.innerText = "Result: " + result + " USD";
                 }
-            } else {
+            }
+            else {
                 if (toCurrency == "USD") {
                     result = money;
                     output.innerText = "Result: " + result + " USD";
-                } else {
+                }
+                else {
                     result = money * 23000;
                     output.innerText = "Result: " + result + " VND";
                 }
