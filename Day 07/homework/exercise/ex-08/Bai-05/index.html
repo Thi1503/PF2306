@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5</title>
+</head>
+
+<body>
+    <script>
+        let valueFibonacci, sum = 0;
+        let i = 1;
+        function countFibonacci(n) {
+            if (n == 1 || n == 2) {
+                return 1;
+            }
+            else {
+                return countFibonacci(n - 1) + countFibonacci(n - 2);
+            }
+        }
+        while (i <= 20) {
+            sum += countFibonacci(i)
+            i++;
+        }
+        alert("Tổng của 20 số Fibinacci đầu tiên là: " + sum);
+    </script>
+</body>
+
+</html>

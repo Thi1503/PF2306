@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xây dựng lớp hình chữ nhật</title>
+</head>
+
+<body>
+    <canvas id="MyRectangle"></canvas>
+    <script>
+
+
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+            getArea() {
+                return this.width * this.height;
+            }
+            getPerimeter() {
+                return (this.width + this.height) * 2;
+            }
+            displayRectangle() {
+                let canvas = document.getElementById("MyRectangle");
+                let ctx = canvas.getContext("2d");
+                ctx.fillStyle = "blue";
+                ctx.fillRect(100, 100, this.width, this.height);
+
+            }
+            #checkWidth(width) {
+                return width > 0;
+            }
+            setWidth(newWidth) {
+                if (this.#checkWidth(newWidth)) {
+                    this.width = newWidth;
+                }
+                else {
+                    throw Error("The input width is not valid");
+                }
+            }
+            #checkHeight(height) {
+                return height > 0;
+            }
+            setHeight(newHeight) {
+                if (this.#checkWidth(newHeight)) {
+                    this.height = newHeight;
+                }
+                else {
+                    throw Error("The input height is not valid");
+                }
+            }
+
+            toString() {
+                return "chieu dai: " + this.height + " chieu rong: " + this.width
+            }
+        }
+
+        let myRectangle = new Rectangle(100, 100);
+        myRectangle.displayRectangle();
+        myRectangle.setWidth(200);
+        myRectangle.setHeight(500);
+        console.log(myRectangle.toString());
+
+    </script>
+</body>
+
+</html>

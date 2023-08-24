@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Bàn cờ caro</h1>
+    <p id="display"></p><br>
+    <button type="button" onclick="changeValue()">Thay đổi</button>
+
+    <script>
+
+        let m = Number(prompt("Nhập vào số hàng của bàn cờ"));
+        let n = Number(prompt("Nhập vào số cột của bàn cờ"));
+        let arrayCaro = [];
+        let display = document.getElementById("display");
+        let text = "";
+        for (let i = 0; i < m; i++) {
+            arrayCaro[i] = arrayCaro[i] = new Array(n).fill("0");
+        }
+        for (let i = 0; i < m; i++) {
+            text += "<br>";
+            for (let j = 0; j < n; j++) {
+                text += arrayCaro[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        display.innerHTML = text;
+        function changeValue() {
+            let row = Number(prompt("Nhập vào số hàng muốn thay đổi (từ 0 đến " + (m - 1) + ")"));
+            let col = Number(prompt("Nhập vào số cột muốn thay đổi (từ 0 đến " + (n - 1) + ")"));
+
+
+            if (row >= 0 && row < m && col >= 0 && col < n) {
+                arrayCaro[row][col] = "X";
+                text = "";
+                for (let i = 0; i < m; i++) {
+                    text += "<br>";
+                    for (let j = 0; j < n; j++) {
+                        console.log(arrayCaro[i][j])
+                        text += arrayCaro[i][j] + "&nbsp;&nbsp;";
+                    }
+                }
+                display.innerHTML = text;
+            } else {
+                alert("Vị trí không hợp lệ!");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

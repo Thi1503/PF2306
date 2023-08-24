@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature</title>
+</head>
+<input type="number" onchange="getTemperature(this)">
+<button id="change" type="button" onclick="changeTemperature()">Chuyển đổi</button>
+<br>
+<p id="result"></p>
+
+<body>
+    <script>
+        class Temperature {
+            constructor(temperatureC) {
+                this.temperatureC = temperatureC;
+            }
+            changeCtoF() {
+                return this.temperatureC * 1.8 + 32;
+            }
+            changeCtoK() {
+                return this.temperatureC + 273;
+            }
+        }
+        let valueC;
+        let result = document.getElementById("result");
+        function getTemperature(obj) {
+            valueC = Number(obj.value);
+        }
+        function changeTemperature() {
+            if (valueC >= -273) {
+                let myTemperature = new Temperature(valueC);
+                result.innerHTML = `Đổi từ ${valueC} độ C sang F là : ${myTemperature.changeCtoF()} <br> 
+                     Đổi từ ${valueC} độ C sang K là : ${myTemperature.changeCtoK()}`
+            }
+            else {
+                result.innerHTML = `Nhiệt độ C thấp nhất là -273 <br> Vui lòng nhập lại`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

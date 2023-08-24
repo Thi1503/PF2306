@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game đoán số</title>
 </head>
+
 <body>
-    <button type="button" onclick="strarGame()">Chơi</button>
+    <button type="button" onclick="startGame()">Chơi</button>
     <script>
         let maxNumber, number;
-        function strarGame() {
-            do{
-              maxNumber = parseInt(prompt("Khoảng đoán số từ 0 đến ..."));
-            }while(maxNumber <=0);
-            maxNumber = Math.floor(Math.random()*(maxNumber+1));
-            for(let i = 0;i<3;i++){
-                number = parseInt(prompt("Số bạn đoán"));
-                if(number == maxNumber){
+        function startGame() {
+            do {
+                maxNumber = parseInt(prompt("Khoảng đoán số từ 0 đến ..."));
+            } while (maxNumber <= 0);
+            maxNumber = Math.floor(Math.random() * maxNumber);
+            for (let i = 1; i <= 3; i++) {
+                number = parseInt(prompt("Số bạn đoán lần "+i));
+                if (number == maxNumber) {
                     alert("Bạn đã thắng");
                     break;
                 }
-                else{
-                    alert("Bạn đã đoán sai")
+                else {
+                    alert("Bạn đã đoán sai lần thứ " + i);
+                    if (i == 3) {
+                        alert("Bạn đã thua ");
+                    }
                 }
             }
         }
 
     </script>
 </body>
+
 </html>

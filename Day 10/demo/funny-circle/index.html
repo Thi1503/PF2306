@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas"width="500px" height="500px" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        let canvas = document.getElementById("myCanvas");
+        let ctx = canvas.getContext("2d");
+        function createCircle(){
+            let x = Math.floor(Math.random()*500);
+            let y = Math.floor(Math.random()*500);
+            let radius = Math.floor(Math.random()*200);
+            ctx.beginPath();
+            ctx.arc(x,y,radius,0,2*Math.PI);
+            ctx.stroke();
+            ctx.fill();
+        }
+        createCircle();
+    </script>
+</body>
+</html>

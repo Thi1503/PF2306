@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 2</title>
+</head>
+<body>
+    <script>
+        let temperature;
+        do {
+            temperature = Number(prompt("Nhập vào nhiệt độ C"));
+            if (temperature > 100){
+                alert("Bạn hãy giảm nhiệt độ")
+            }
+            else if(temperature < 20){
+                alert("Bạn hãy tăng nhiệt độ")
+            }
+            else{
+                alert("Nhiệt độ thích hợp")
+            }
+        } while (true);
+    </script>
+</body>
+</html>
